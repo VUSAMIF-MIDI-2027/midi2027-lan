@@ -1,0 +1,904 @@
+.contact-page {
+  min-height: calc(100vh - 64px);
+  padding: 88px 0 112px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(96, 170, 255, 0.09), transparent 28%),
+    linear-gradient(rgba(96, 170, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(96, 170, 255, 0.018) 1px, transparent 1px),
+    #09090b;
+  background-size: auto, 64px 64px, 64px 64px;
+}
+
+.contact-page-wrap {
+  width: min(1120px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.contact-page-hero {
+  max-width: 780px;
+  margin-bottom: 56px;
+}
+
+.contact-page-hero > span {
+  display: block;
+  margin-bottom: 14px;
+  color: #60aaff;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.contact-page-hero h1 {
+  margin: 0;
+  color: #f4f7ff;
+  font-size: clamp(54px, 7vw, 92px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.92;
+}
+
+.contact-page-hero p {
+  max-width: 740px;
+  margin: 24px 0 0;
+  color: #94a6bf;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.contact-directory {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.contact-directory-card {
+  position: relative;
+  display: flex;
+  min-height: 286px;
+  min-width: 0;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  background:
+    linear-gradient(145deg, rgba(96, 170, 255, 0.045), transparent 40%),
+    #101015;
+  color: inherit;
+  text-decoration: none;
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.18);
+  transition:
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms ease;
+}
+
+.contact-directory-card::after {
+  position: absolute;
+  right: -50px;
+  bottom: -90px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: rgba(96, 170, 255, 0.08);
+  content: '';
+  filter: blur(28px);
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+.contact-directory-card::before {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  content: '';
+  opacity: 0;
+  transition: opacity 240ms ease;
+}
+
+.contact-directory-card:hover,
+.contact-directory-card:focus-visible {
+  border-color: rgba(96, 170, 255, 0.55);
+  outline: none;
+  box-shadow:
+    0 26px 68px rgba(0, 0, 0, 0.42),
+    0 0 34px rgba(96, 170, 255, 0.1);
+  transform: translateY(-6px);
+}
+
+.contact-directory-card:hover::after,
+.contact-directory-card:focus-visible::after {
+  opacity: 1;
+}
+
+.contact-directory-card:hover::before,
+.contact-directory-card:focus-visible::before {
+  opacity: 1;
+}
+
+.contact-directory-card--featured {
+  border-color: rgba(96, 170, 255, 0.34);
+  background:
+    linear-gradient(140deg, rgba(96, 170, 255, 0.22), rgba(49, 104, 170, 0.08) 58%, transparent),
+    #10131a;
+}
+
+.contact-directory-card--instagram::before {
+  background: linear-gradient(135deg, #833ab4 0%, #d62976 46%, #f56040 78%, #f7a34b 100%);
+}
+
+.contact-directory-card--facebook::before {
+  background: linear-gradient(145deg, #1877f2, #125bc0);
+}
+
+.contact-directory-card--x::before {
+  background: linear-gradient(145deg, #050505, #181818);
+}
+
+.contact-directory-card--tiktok::before {
+  background:
+    radial-gradient(circle at 12% 12%, rgba(37, 244, 238, 0.28), transparent 34%),
+    radial-gradient(circle at 92% 92%, rgba(254, 44, 85, 0.28), transparent 36%),
+    #0d0d0f;
+}
+
+.contact-directory-card--discord::before {
+  background: linear-gradient(145deg, #5865f2, #414bb8);
+}
+
+.contact-directory-card--instagram:hover,
+.contact-directory-card--instagram:focus-visible,
+.contact-directory-card--facebook:hover,
+.contact-directory-card--facebook:focus-visible,
+.contact-directory-card--x:hover,
+.contact-directory-card--x:focus-visible,
+.contact-directory-card--tiktok:hover,
+.contact-directory-card--tiktok:focus-visible,
+.contact-directory-card--discord:hover,
+.contact-directory-card--discord:focus-visible {
+  border-color: rgba(255, 255, 255, 0.48);
+  box-shadow:
+    0 28px 72px rgba(0, 0, 0, 0.46),
+    0 0 36px rgba(255, 255, 255, 0.08);
+}
+
+.contact-directory-icon {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 28px;
+  border: 1px solid rgba(96, 170, 255, 0.18);
+  border-radius: 7px;
+  background: rgba(96, 170, 255, 0.08);
+  color: #60aaff;
+  place-items: center;
+  transition:
+    background 200ms ease,
+    border-color 200ms ease,
+    color 200ms ease,
+    transform 200ms ease;
+}
+
+.contact-directory-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.contact-directory-card:hover .contact-directory-icon,
+.contact-directory-card:focus-visible .contact-directory-icon {
+  background: rgba(96, 170, 255, 0.16);
+  transform: translateY(-2px) scale(1.04);
+}
+
+.contact-directory-card--instagram:hover .contact-directory-icon,
+.contact-directory-card--instagram:focus-visible .contact-directory-icon,
+.contact-directory-card--facebook:hover .contact-directory-icon,
+.contact-directory-card--facebook:focus-visible .contact-directory-icon,
+.contact-directory-card--x:hover .contact-directory-icon,
+.contact-directory-card--x:focus-visible .contact-directory-icon,
+.contact-directory-card--tiktok:hover .contact-directory-icon,
+.contact-directory-card--tiktok:focus-visible .contact-directory-icon,
+.contact-directory-card--discord:hover .contact-directory-icon,
+.contact-directory-card--discord:focus-visible .contact-directory-icon {
+  border-color: rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+}
+
+.contact-directory-copy {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-directory-copy strong {
+  color: #f1f5ff;
+  font-size: 23px;
+  font-weight: 800;
+  line-height: 1.1;
+  transition: color 200ms ease;
+}
+
+.contact-directory-copy > span {
+  margin-top: 12px;
+  color: #8396b2;
+  font-size: 14px;
+  line-height: 1.55;
+  transition: color 200ms ease;
+}
+
+.contact-directory-card--instagram:hover .contact-directory-copy strong,
+.contact-directory-card--instagram:hover .contact-directory-copy > span,
+.contact-directory-card--instagram:focus-visible .contact-directory-copy strong,
+.contact-directory-card--instagram:focus-visible .contact-directory-copy > span,
+.contact-directory-card--facebook:hover .contact-directory-copy strong,
+.contact-directory-card--facebook:hover .contact-directory-copy > span,
+.contact-directory-card--facebook:focus-visible .contact-directory-copy strong,
+.contact-directory-card--facebook:focus-visible .contact-directory-copy > span,
+.contact-directory-card--x:hover .contact-directory-copy strong,
+.contact-directory-card--x:hover .contact-directory-copy > span,
+.contact-directory-card--x:focus-visible .contact-directory-copy strong,
+.contact-directory-card--x:focus-visible .contact-directory-copy > span,
+.contact-directory-card--tiktok:hover .contact-directory-copy strong,
+.contact-directory-card--tiktok:hover .contact-directory-copy > span,
+.contact-directory-card--tiktok:focus-visible .contact-directory-copy strong,
+.contact-directory-card--tiktok:focus-visible .contact-directory-copy > span,
+.contact-directory-card--discord:hover .contact-directory-copy strong,
+.contact-directory-card--discord:hover .contact-directory-copy > span,
+.contact-directory-card--discord:focus-visible .contact-directory-copy strong,
+.contact-directory-card--discord:focus-visible .contact-directory-copy > span {
+  color: #ffffff;
+}
+
+.contact-directory-link {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: auto;
+  padding-top: 24px;
+  overflow-wrap: anywhere;
+  color: #60aaff;
+  font-size: 13px;
+  font-weight: 800;
+  transition: color 200ms ease;
+}
+
+.contact-directory-link > span {
+  font-size: 18px;
+  transition: transform 180ms ease;
+}
+
+.contact-directory-card:hover .contact-directory-link > span,
+.contact-directory-card:focus-visible .contact-directory-link > span {
+  transform: translateX(4px);
+}
+
+.contact-directory-card--instagram:hover .contact-directory-link,
+.contact-directory-card--instagram:focus-visible .contact-directory-link,
+.contact-directory-card--facebook:hover .contact-directory-link,
+.contact-directory-card--facebook:focus-visible .contact-directory-link,
+.contact-directory-card--x:hover .contact-directory-link,
+.contact-directory-card--x:focus-visible .contact-directory-link,
+.contact-directory-card--tiktok:hover .contact-directory-link,
+.contact-directory-card--tiktok:focus-visible .contact-directory-link,
+.contact-directory-card--discord:hover .contact-directory-link,
+.contact-directory-card--discord:focus-visible .contact-directory-link {
+  color: #ffffff;
+}
+
+@media (max-width: 900px) {
+  .contact-directory {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-page {
+    padding: 64px 0 80px;
+  }
+
+  .contact-page-wrap {
+    width: min(100% - 32px, 1120px);
+  }
+
+  .contact-page-hero {
+    margin-bottom: 38px;
+  }
+
+  .contact-page-hero h1 {
+    font-size: clamp(50px, 17vw, 72px);
+  }
+
+  .contact-directory {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-directory-card {
+    min-height: 260px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-directory-card,
+  .contact-directory-card::before,
+  .contact-directory-card::after,
+  .contact-directory-icon,
+  .contact-directory-link > span {
+    transition: none;
+  }
+}
+
+.register-page {
+  min-height: calc(100vh - 64px);
+  padding: 88px 0 112px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(96, 170, 255, 0.09), transparent 28%),
+    linear-gradient(rgba(96, 170, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(96, 170, 255, 0.018) 1px, transparent 1px),
+    #09090b;
+  background-size: auto, 64px 64px, 64px 64px;
+}
+
+.register-wrap {
+  width: min(1440px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.register-hero {
+  max-width: 780px;
+  margin-bottom: 52px;
+}
+
+.register-kicker {
+  display: block;
+  margin-bottom: 14px;
+  color: #60aaff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+}
+
+.register-hero h1 {
+  margin: 0;
+  color: #f4f7ff;
+  font-size: clamp(48px, 6vw, 80px);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 0.95;
+}
+
+.register-hero p {
+  max-width: 650px;
+  margin: 22px 0 0;
+  color: #92a4be;
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.register-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.register-card {
+  --register-card-bg: #111116;
+  position: relative;
+  display: flex;
+  min-width: 0;
+  min-height: 540px;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  background: #101015;
+  color: inherit;
+  text-align: left;
+  box-shadow: 0 22px 54px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+}
+
+.register-card:hover,
+.register-card:focus-visible {
+  border-color: #60aaff;
+  outline: none;
+  box-shadow:
+    0 26px 68px rgba(0, 0, 0, 0.48),
+    0 0 0 1px rgba(96, 170, 255, 0.18),
+    0 0 34px rgba(96, 170, 255, 0.13);
+  transform: translateY(-7px);
+}
+
+.register-card-art {
+  position: relative;
+  display: block;
+  height: 286px;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: var(--register-card-bg);
+}
+
+.register-card-image {
+  position: absolute;
+  transition: filter 300ms ease, transform 500ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.register-card-image--cover {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.register-card-image--contain {
+  inset: 15%;
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+
+.register-card-image--lol {
+  inset: 10%;
+  width: 80%;
+  height: 80%;
+}
+
+.register-card-image--tft {
+  inset: 23%;
+  width: 54%;
+  height: 54%;
+}
+
+.register-card:hover .register-card-image,
+.register-card:focus-visible .register-card-image {
+  filter: saturate(1.08) contrast(1.03);
+  transform: scale(1.055);
+}
+
+.register-card-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top, #101015 0%, rgba(16, 16, 21, 0.18) 52%, rgba(0, 0, 0, 0.08) 100%),
+    linear-gradient(120deg, rgba(96, 170, 255, 0.08), transparent 48%);
+}
+
+.register-card-index {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.register-card-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 4px 22px 22px;
+}
+
+.register-card-short {
+  margin-bottom: 8px;
+  color: #60aaff;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+}
+
+.register-card-content strong {
+  color: #f5f8ff;
+  font-size: clamp(26px, 2vw, 32px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+}
+
+.register-card-description {
+  margin: 14px 0 24px;
+  color: #8fa1bb;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.register-card-cta {
+  display: flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: auto;
+  padding: 0 15px;
+  border: 1px solid rgba(96, 170, 255, 0.28);
+  border-radius: 4px;
+  background: rgba(96, 170, 255, 0.06);
+  color: #cde4ff;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  transition: background 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+.register-card-cta > span {
+  color: #60aaff;
+  font-size: 20px;
+  transition: transform 180ms ease;
+}
+
+.register-card:hover .register-card-cta,
+.register-card:focus-visible .register-card-cta {
+  border-color: #60aaff;
+  background: #60aaff;
+  color: #07101c;
+}
+
+.register-card:hover .register-card-cta > span,
+.register-card:focus-visible .register-card-cta > span {
+  color: #07101c;
+  transform: translateX(4px);
+}
+
+.register-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  overflow-y: auto;
+  padding: 24px;
+  background: rgba(3, 4, 7, 0.78);
+  backdrop-filter: blur(12px);
+  place-items: center;
+}
+
+.register-modal {
+  position: relative;
+  width: min(560px, 100%);
+  max-height: calc(100dvh - 48px);
+  overflow-y: auto;
+  padding: 38px;
+  border: 1px solid rgba(96, 170, 255, 0.23);
+  border-radius: 12px;
+  background:
+    linear-gradient(145deg, rgba(96, 170, 255, 0.06), transparent 36%),
+    #101015;
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.72);
+  animation: register-modal-in 220ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.register-modal--wide {
+  width: min(780px, 100%);
+}
+
+.register-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  display: grid;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.035);
+  color: #9fb0c8;
+  cursor: pointer;
+  place-items: center;
+  transition: border-color 160ms ease, color 160ms ease;
+}
+
+.register-modal-close:hover,
+.register-modal-close:focus-visible {
+  border-color: #60aaff;
+  color: #ffffff;
+  outline: none;
+}
+
+.register-modal-close svg {
+  width: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-width: 1.8;
+}
+
+.register-modal-heading {
+  padding-right: 38px;
+}
+
+.register-modal-heading > span {
+  color: #60aaff;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+}
+
+.register-modal h2 {
+  margin: 8px 0 12px;
+  color: #f4f7ff;
+  font-size: clamp(32px, 6vw, 44px);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1;
+}
+
+.register-modal-heading p,
+.register-success p {
+  margin: 0;
+  color: #8fa1bb;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.register-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.register-form label > span {
+  color: #bdc9db;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.register-form input,
+.register-form select {
+  width: 100%;
+  height: 50px;
+  padding: 0 15px;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 4px;
+  background: #09090d;
+  color: #edf4ff;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.register-form select {
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, #7690b2 50%),
+    linear-gradient(135deg, #7690b2 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) 21px,
+    calc(100% - 13px) 21px;
+  background-repeat: no-repeat;
+  background-size: 5px 5px, 5px 5px;
+}
+
+.register-form input:focus,
+.register-form select:focus {
+  border-color: #60aaff;
+  box-shadow: 0 0 0 3px rgba(96, 170, 255, 0.1);
+}
+
+.register-form input[readonly] {
+  color: #8fa8cc;
+  cursor: default;
+}
+
+.register-form--valorant {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.register-form-field--full,
+.register-player-fields,
+.register-captain-fields,
+.register-form--valorant .register-submit {
+  grid-column: 1 / -1;
+}
+
+.register-player-fields,
+.register-captain-fields {
+  min-width: 0;
+  margin: 4px 0 0;
+  padding: 18px;
+  border: 1px solid rgba(96, 170, 255, 0.16);
+  border-radius: 6px;
+  background: rgba(96, 170, 255, 0.035);
+}
+
+.register-player-fields legend,
+.register-captain-fields legend {
+  padding: 0 8px;
+  color: #60aaff;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.register-player-fields > div,
+.register-captain-fields > div {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.register-player-fields label:last-child {
+  grid-column: 1 / -1;
+}
+
+.register-submit {
+  display: flex;
+  min-height: 50px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+  padding: 0 22px;
+  border: 1px solid #60aaff;
+  border-radius: 4px;
+  background: #60aaff;
+  color: #06101c;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: filter 160ms ease, transform 160ms ease;
+}
+
+.register-submit:hover,
+.register-submit:focus-visible {
+  outline: none;
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.register-success {
+  display: flex;
+  min-height: 350px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.register-success-mark {
+  display: grid;
+  width: 62px;
+  height: 62px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(96, 170, 255, 0.5);
+  border-radius: 50%;
+  background: rgba(96, 170, 255, 0.1);
+  color: #60aaff;
+  place-items: center;
+}
+
+.register-success-mark svg {
+  width: 28px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.register-success p {
+  max-width: 380px;
+}
+
+.register-success .register-submit {
+  margin-top: 28px;
+}
+
+@keyframes register-modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+}
+
+@media (max-width: 1100px) {
+  .register-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .register-card {
+    min-height: 500px;
+  }
+}
+
+@media (max-width: 640px) {
+  .register-page {
+    padding: 64px 0 80px;
+  }
+
+  .register-wrap {
+    width: min(100% - 32px, 1440px);
+  }
+
+  .register-hero {
+    margin-bottom: 36px;
+  }
+
+  .register-hero h1 {
+    font-size: clamp(44px, 14vw, 62px);
+  }
+
+  .register-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .register-card {
+    min-height: 510px;
+  }
+
+  .register-modal-backdrop {
+    align-items: end;
+    padding: 12px;
+  }
+
+  .register-modal {
+    max-height: calc(100dvh - 24px);
+    padding: 30px 22px 24px;
+  }
+
+  .register-form--valorant,
+  .register-player-fields > div,
+  .register-captain-fields > div {
+    grid-template-columns: 1fr;
+  }
+
+  .register-player-fields label:last-child {
+    grid-column: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .register-card,
+  .register-card-image,
+  .register-card-cta,
+  .register-card-cta > span,
+  .register-modal,
+  .register-submit {
+    animation: none;
+    transition: none;
+  }
+}
+
+.games-page {
+  display: grid;
+  min-height: calc(100vh - 64px);
+  place-items: center;
+  padding: 64px 24px;
+  background: #08080c;
+  text-align: center;
+}
+
+.games-page h1 {
+  margin: 0;
+  color: #eef4ff;
+  font-size: clamp(64px, 12vw, 160px);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+

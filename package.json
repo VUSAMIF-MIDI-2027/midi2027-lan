@@ -1,0 +1,14 @@
+{
+  "name": "midi2027-lan",
+  "private": true,
+  "workspaces": ["frontend"],
+  "scripts": {
+    "dev": "npm run dev --workspace frontend",
+    "build": "npm run build --workspace frontend",
+    "typecheck": "npm run typecheck --workspace frontend",
+    "preview": "npm run preview --workspace frontend",
+    "test": "npm run test --workspace frontend",
+    "test:pages": "npm run test:pages --workspace frontend"
+  },
+  "engines": { "node": ">=22.12.0" }
+}
