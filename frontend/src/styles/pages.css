@@ -52,6 +52,11 @@
   gap: 18px;
 }
 
+.contact-directory--email {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: clamp(32px, 5vw, 64px);
+}
+
 .contact-directory-card {
   position: relative;
   display: flex;

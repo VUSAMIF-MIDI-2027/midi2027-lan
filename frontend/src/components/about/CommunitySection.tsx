@@ -17,7 +17,7 @@ export default function CommunitySection() {
               <h2>{tr.discordHeading}</h2>
               <p>{tr.discordBody}</p>
             </div>
-            <a className="contact-button contact-button--discord" href="https://discord.gg/HwFhKe3Brn" target="_blank" rel="noopener noreferrer">
+            <a className="contact-button contact-button--discord" href="https://discord.gg/hXGMH8nXjH" target="_blank" rel="noopener noreferrer">
               {tr.discordCta}
               <span aria-hidden="true">→</span>
             </a>

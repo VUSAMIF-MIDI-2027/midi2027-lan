@@ -1,6 +1,6 @@
 import { Link } from 'react-router'
-import { useLang } from '../../i18n/LanguageContext'
 import { wrap } from '../../styles/layout'
+import { useLang } from '../../i18n/LanguageContext'
 import type { CSSProperties } from 'react'
 import { useTournaments } from '../../hooks/useTournaments'
 
@@ -25,7 +25,7 @@ export default function TournamentsSection() {
             {tournaments.map((t, index) => (
               <Link
                 aria-label={`${t.game} tournament — ${t.date}`}
-                className="tournament-card"
+                className="showcase-card tournament-card"
                 key={t.abbr}
                 style={{
                   '--tournament-accent': t.accent,

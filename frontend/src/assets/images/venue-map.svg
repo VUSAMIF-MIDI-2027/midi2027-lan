@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1350">
+  <defs>
+    <path id="pin" d="M0 0C-17-20-26-35-26-52a26 26 0 0 1 52 0C26-35 17-20 0 0Z"/>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto">
+      <path d="m1 1 7 4-7 4" fill="none" stroke="#ff6ac5" stroke-width="2"/>
+    </marker>
+  </defs>
+  <rect width="1080" height="1350" fill="#050506"/>
+  <g fill="none" stroke="#fff" stroke-width="4" stroke-linejoin="round">
+    <path d="M48 0l88 377L0 455M110 0l74 336L767 0M0 490l135-77 192 845L31 1350M349 1127l-157-753L807 20l204 1034-638 190-17-76M338 1350l-9-39-125 39M406 1350l-15-65 622-193 52 258M1080 1080l-28 5 28 123M1080 1030l-30 8-157-765 187-39M834 0l58 249 188-37"/>
+    <path d="m383 482 62-11 8 35 54-13-16-30 63-12 98 156-71 16-43-73-75 18 17 76-62 13z"/>
+    <path d="m290 694 52-9 4 14 81-14 10 51-81 15 11 47-57 9zM317 842l58-10 6 28 45-8-10-43 56-9 38 197-55 10-8-37-43 8 12 63-55 10z"/>
+    <path d="m530 683 129-30 19 74-124 159-35-158 19-6z" stroke-dasharray="16 6"/>
+  </g>
+  <g fill="#fff" font-family="Dosis, Arial, sans-serif" font-size="32">
+    <text transform="translate(86 75) rotate(77)">Švitrigailos g.</text>
+    <text transform="translate(217 709) rotate(77)">Švitrigailos g.</text>
+    <text transform="translate(430 225) rotate(-30)">Naugarduko g.</text>
+    <text transform="translate(920 548) rotate(78)">Algirdo g.</text>
+    <text transform="translate(1038 1146) rotate(78)">Algirdo g.</text>
+    <text transform="translate(615 1206) rotate(-17)">Kauno g.</text>
+    <text transform="translate(157 1344) rotate(-17)">Kauno g.</text>
+    <text x="344" y="344">Senoji trobelė</text>
+    <text x="461" y="286">Žemaičių ąsotis</text>
+    <text x="42" y="562">Vinted</text>
+    <text x="843" y="1050">Kinų Rožė</text>
+    <text x="960" y="105">VU MIF</text>
+    <use href="#pin" x="85" y="529"/><use href="#pin" x="433" y="312"/>
+    <use href="#pin" x="561" y="245"/><use href="#pin" x="829" y="311"/>
+    <use href="#pin" x="287" y="697"/><use href="#pin" x="919" y="1012"/>
+    <use href="#pin" x="1055" y="67"/>
+  </g>
+  <g fill="#050506">
+    <circle cx="85" cy="477" r="10"/><circle cx="433" cy="260" r="10"/>
+    <circle cx="561" cy="193" r="10"/><circle cx="829" cy="259" r="10"/>
+    <circle cx="287" cy="645" r="10"/><circle cx="919" cy="960" r="10"/>
+    <circle cx="1055" cy="15" r="10"/>
+  </g>
+  <g fill="#60aaff" font-family="Dosis, Arial, sans-serif" font-size="76">
+    <text x="310" y="774">A</text>
+    <text transform="translate(459 511) rotate(78)">B</text>
+    <text transform="translate(399 947) rotate(-11)">C</text>
+    <text transform="translate(579 775) rotate(-12)">D</text>
+  </g>
+  <g fill="none" stroke="#ff6ac5" stroke-width="6" marker-end="url(#arrow)">
+    <path d="m455 396 24 91"/><path d="m525 658-23-91"/>
+  </g>
+  <g transform="translate(346 1075) rotate(-14)" font-family="Dosis, Arial, sans-serif" text-anchor="middle">
+    <rect width="167" height="86" fill="#3e3e40"/>
+    <text x="83.5" y="35" fill="white" font-size="23">UNIPARK</text>
+    <text x="83.5" y="65" fill="white" font-size="21">Stovėjimo aikštelė</text>
+  </g>
+</svg>

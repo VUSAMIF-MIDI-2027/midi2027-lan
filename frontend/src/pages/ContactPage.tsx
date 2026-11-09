@@ -99,7 +99,7 @@ export default function ContactPage() {
     {
       title: 'Discord',
       body: tr.contactDiscordBody,
-      href: 'https://discord.gg/HwFhKe3Brn',
+      href: 'https://discord.gg/hXGMH8nXjH',
       linkLabel: tr.discordCta,
       brand: 'discord',
       icon: (
@@ -119,34 +119,39 @@ export default function ContactPage() {
           <p>{tr.contactPageAbout}</p>
         </header>
 
-        <div className="contact-directory">
-          {cards.map((card) => {
-            const external = card.href.startsWith('http')
-            return (
-              <a
-                className={[
-                  'contact-directory-card',
-                  card.featured ? 'contact-directory-card--featured' : '',
-                  card.brand ? `contact-directory-card--${card.brand}` : '',
-                ].filter(Boolean).join(' ')}
-                href={card.href}
-                key={card.title}
-                target={external ? '_blank' : undefined}
-                rel={external ? 'noopener noreferrer' : undefined}
-              >
-                <span className="contact-directory-icon">{card.icon}</span>
-                <span className="contact-directory-copy">
-                  <strong>{card.title}</strong>
-                  <span>{card.body}</span>
-                </span>
-                <span className="contact-directory-link">
-                  {card.linkLabel}
-                  <span aria-hidden="true">→</span>
-                </span>
-              </a>
-            )
-          })}
-        </div>
+        {[
+          { className: 'contact-directory contact-directory--email', group: cards.filter(card => card.href.startsWith('mailto:')) },
+          { className: 'contact-directory', group: cards.filter(card => !card.href.startsWith('mailto:')) },
+        ].map(({ className, group }) => (
+          <div key={className} className={className}>
+            {group.map((card) => {
+              const external = card.href.startsWith('http')
+              return (
+                <a
+                  className={[
+                    'contact-directory-card',
+                    card.featured ? 'contact-directory-card--featured' : '',
+                    card.brand ? `contact-directory-card--${card.brand}` : '',
+                  ].filter(Boolean).join(' ')}
+                  href={card.href}
+                  key={card.title}
+                  target={external ? '_blank' : undefined}
+                  rel={external ? 'noopener noreferrer' : undefined}
+                >
+                  <span className="contact-directory-icon">{card.icon}</span>
+                  <span className="contact-directory-copy">
+                    <strong>{card.title}</strong>
+                    <span>{card.body}</span>
+                  </span>
+                  <span className="contact-directory-link">
+                    {card.linkLabel}
+                    <span aria-hidden="true">→</span>
+                  </span>
+                </a>
+              )
+            })}
+          </div>
+        ))}
       </div>
     </section>
   )

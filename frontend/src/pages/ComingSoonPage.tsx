@@ -15,7 +15,7 @@ export default function ComingSoonPage() {
       <h1 className="text-5xl font-extrabold sm:text-7xl">{titles[key] ?? tr.notFound}</h1>
       <p className="text-muted">{titles[key] ? tr.comingSoon : tr.notFoundBody}</p>
       <Link to="/" className="home-button home-button--solid">{tr.backToAbout}</Link>
-      {key === 'register' && <a href="https://discord.gg/HwFhKe3Brn" target="_blank" rel="noopener noreferrer" className="text-accent underline underline-offset-4">{tr.discordCta}</a>}
+      {key === 'register' && <a href="https://discord.gg/hXGMH8nXjH" target="_blank" rel="noopener noreferrer" className="text-accent underline underline-offset-4">{tr.discordCta}</a>}
     </section>
   )
 }

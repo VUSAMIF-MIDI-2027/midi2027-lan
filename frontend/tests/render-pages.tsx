@@ -27,8 +27,7 @@ export function checkPages() {
     const html = renderToString(<MemoryRouter initialEntries={['/register?game='+game]}><RegisterPage /></MemoryRouter>)
     assert.ok(html.includes('register-modal-title'), `${game} deep link renders its dialog`)
     assert.ok(html.includes('Registration is not open yet'), 'Registration has an honest unavailable state')
-    assert.ok(html.includes('disabled=""'), 'Submission is disabled without the backend')
-    if (game === 'valorant' || game === 'val') assert.ok(html.includes('player5RiotId'), 'Valorant has all five player inputs')
+    assert.doesNotMatch(html, /<(form|input|select)\b/, 'Tournament dialogs contain no registration fields')
   }
 
   for (const Page of [RegisterPage, GalleryPage, DetailsPage, ContactPage, GamesPage]) {
