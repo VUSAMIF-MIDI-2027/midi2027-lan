@@ -1,46 +1,27 @@
 # MIDI 2027 LAN
 
-Website for the MIDI 2027 LAN Party, based on the Figma Make design. Built with React, TypeScript, Vite, and Tailwind CSS v4, with support for English and Lithuanian.
+MIDI 2027 LAN is a bilingual website for the MIDI 2027 LAN Party. It gives players and visitors one place to explore the tournament lineup, check the schedule and venue map, meet the organisers, and find contact and community links. The current version is an informational site in English and Lithuanian. As the event approaches, it will also serve as the registration hub for players and teams.
 
-## Current features
+## Tech stack
 
-| Page | Route | What’s available |
-| --- | --- | --- |
-| About | `/`, `/about` | Event introduction, horizontally scrolling tournament cards, partner tiles, and community links |
-| Gallery | `/gallery` | Responsive staggered layout with mixed tile sizes and placeholder photography |
-| Games | `/games` | Coming-soon page |
-| Register | `/register` | Four tournament cards with registration status notices |
-| Event Details | `/details` | Venue map, two-day tournament schedule, and organiser team cards with cat silhouettes |
-| Contact | `/contact` | Two business email cards followed by a separate group of social media and Discord links |
-| Privacy and cookies | `/privacy`, `/cookies` | Placeholder policy pages |
+- **React and TypeScript** for the frontend
+- **Vite** for local development and production builds
+- **Tailwind CSS v4** for styling and responsive layouts
+- **ASP.NET Core** for the planned backend
 
 ## Run locally
 
-Install Node.js 22.12 or later and run these commands from the repository root.
+Install Node.js 22.12 or later, then run these commands from the repository root.
 
 ```sh
 npm ci
 npm run dev
 ```
 
-Open [http://127.0.0.1:5173](http://127.0.0.1:5173).
+Open [http://127.0.0.1:5173](http://127.0.0.1:5173). To create a production build, run `npm run build`.
 
-| Command | Purpose |
-| --- | --- |
-| `npm run typecheck` | Check TypeScript |
-| `npm test` | Run API and registration service tests |
-| `npm run test:pages` | Check page rendering, translations, and registration links |
-| `npm run build` | Build the production frontend |
-| `npm run preview` | Preview the production build locally |
+## Future ASP.NET Core implementation
 
-## Backend status
+The frontend currently runs with local tournament data and displays registration status notices. The planned ASP.NET Core API will provide tournament data and accept registration submissions. The frontend already includes TypeScript API contracts, a registration service, and a Vite development proxy for `/api` requests.
 
-The site runs with local tournament data by default. To connect an ASP.NET tournament API during development, copy `frontend/.env.example` to `frontend/.env.local`, set `API_PROXY_TARGET` to the API’s local URL, and set `VITE_USE_API=true`. Vite forwards `/api` requests to that URL.
-
-The frontend includes registration request types and a submission service. Live registration still requires a frontend form and an ASP.NET endpoint. The server and database are pending. See the [ASP.NET integration notes](docs/aspnet-integration.md) for API contracts and deployment options.
-
-## Before publishing
-
-- Confirm the 2027 tournament dates. The About cards and Event Details schedule still show April 2026 dates from the design.
-- Replace the gallery placeholders with the final event photos.
-- Add the privacy and cookie policy content.
+Once the backend is available, copy `frontend/.env.example` to `frontend/.env.local`, set `API_PROXY_TARGET` to the local ASP.NET Core URL, and set `VITE_USE_API=true` to load tournament data from the API. Live registration will also require frontend forms and backend storage for submissions.
