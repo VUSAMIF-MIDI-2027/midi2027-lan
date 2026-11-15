@@ -357,78 +357,101 @@
   margin-inline: auto;
 }
 
-.register-hero {
-  max-width: 780px;
-  margin-bottom: 52px;
+.register-copy {
+  display: grid;
 }
 
-.register-kicker {
+.register-copy > span {
+  grid-area: 1 / 1;
+}
+
+/* Both translations contribute to the height at the current width. */
+.register-copy > [aria-hidden="true"] {
+  visibility: hidden;
+}
+
+.register-section + .register-section {
+  margin-top: 92px;
+}
+
+.register-section-label {
+  margin-bottom: 38px;
+}
+
+.register-section-label > span {
   display: block;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   color: #60aaff;
-  font-size: 11px;
-  font-weight: 800;
+  font-size: 10px;
+  font-weight: 900;
+  line-height: 1.55;
   letter-spacing: 0.2em;
 }
 
-.register-hero h1 {
+.register-section-label :is(h1, h2) {
   margin: 0;
   color: #f4f7ff;
-  font-size: clamp(48px, 6vw, 80px);
+  font-size: clamp(32px, 5.1vw, 56px);
   font-weight: 800;
   letter-spacing: -0.035em;
   line-height: 0.95;
 }
 
-.register-hero p {
-  max-width: 650px;
-  margin: 22px 0 0;
+.register-section-label p {
+  max-width: 580px;
+  margin: 18px 0 0;
   color: #92a4be;
-  font-size: 18px;
-  line-height: 1.65;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .register-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
+  gap: 20px;
 }
 
 .register-card {
   --register-card-bg: #111116;
+  --register-card-cut: 32px;
   position: relative;
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
   min-width: 0;
-  min-height: 540px;
-  flex-direction: column;
-  overflow: hidden;
-  padding: 0;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  background: #101015;
+  min-height: 290px;
+  padding: 1px;
+  border: 0;
+  background: rgba(96, 170, 255, 0.32);
+  clip-path: polygon(0 0, calc(100% - var(--register-card-cut)) 0, 100% var(--register-card-cut),
+    100% 100%, var(--register-card-cut) 100%, 0 calc(100% - var(--register-card-cut)));
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.28));
   color: inherit;
   text-align: left;
-  box-shadow: 0 22px 54px rgba(0, 0, 0, 0.25);
   cursor: pointer;
-  transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+  transition: background 220ms ease, filter 220ms ease, transform 220ms ease;
 }
 
 .register-card:hover,
 .register-card:focus-visible {
-  border-color: #60aaff;
-  outline: none;
-  box-shadow:
-    0 26px 68px rgba(0, 0, 0, 0.48),
-    0 0 0 1px rgba(96, 170, 255, 0.18),
-    0 0 34px rgba(96, 170, 255, 0.13);
-  transform: translateY(-7px);
+  background: #60aaff;
+  filter: drop-shadow(0 18px 30px rgba(96, 170, 255, 0.2));
+  transform: translateY(-4px);
+}
+
+@media (min-width: 721px) {
+  :is(.register-grid--main .register-card:nth-child(odd),
+      .register-grid--side .register-card:nth-child(even)) .register-card-art {
+    grid-area: 1 / 2;
+  }
+
+  :is(.register-grid--main .register-card:nth-child(odd),
+      .register-grid--side .register-card:nth-child(even)) .register-card-content {
+    grid-area: 1 / 1;
+  }
 }
 
 .register-card-art {
   position: relative;
   display: block;
-  height: 286px;
-  flex-shrink: 0;
   overflow: hidden;
   background: var(--register-card-bg);
 }
@@ -464,6 +487,24 @@
   height: 54%;
 }
 
+.register-card-image--side {
+  inset: 12%;
+  width: 76%;
+  height: 76%;
+}
+
+.register-card-fallback {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: clamp(36px, 8.2vw, 120px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.8;
+}
+
 .register-card:hover .register-card-image,
 .register-card:focus-visible .register-card-image {
   filter: saturate(1.08) contrast(1.03);
@@ -480,42 +521,45 @@
 
 .register-card-index {
   position: absolute;
-  top: 16px;
   right: 18px;
-  color: rgba(255, 255, 255, 0.4);
-  font-size: 11px;
+  bottom: 12px;
+  color: rgba(255, 255, 255, 0.18);
+  font-size: clamp(42px, 7.6vw, 92px);
   font-weight: 800;
-  letter-spacing: 0.14em;
+  letter-spacing: -0.04em;
+  line-height: 1;
 }
 
 .register-card-content {
   display: flex;
-  flex: 1;
   flex-direction: column;
-  padding: 4px 22px 22px;
+  justify-content: center;
+  min-width: 0;
+  padding: 32px 36px;
+  background: #101015;
 }
 
 .register-card-short {
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   color: #60aaff;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 900;
   letter-spacing: 0.18em;
 }
 
 .register-card-content strong {
   color: #f5f8ff;
-  font-size: clamp(26px, 2vw, 32px);
+  font-size: clamp(36px, 4.6vw, 72px);
   font-weight: 800;
   letter-spacing: -0.02em;
-  line-height: 1.02;
+  line-height: 0.96;
 }
 
 .register-card-description {
-  margin: 14px 0 24px;
+  margin: 18px 0 30px;
   color: #8fa1bb;
-  font-size: 14px;
-  line-height: 1.55;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .register-card-cta {
@@ -524,6 +568,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+  width: min(100%, 220px);
   margin-top: auto;
   padding: 0 15px;
   border: 1px solid rgba(96, 170, 255, 0.28);
@@ -820,13 +865,22 @@
   }
 }
 
-@media (max-width: 1100px) {
-  .register-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+@media (max-width: 720px) {
+  .register-card {
+    --register-card-cut: 20px;
+    grid-template-columns: minmax(0, 1fr);
   }
 
-  .register-card {
-    min-height: 500px;
+  .register-card-art {
+    min-height: 220px;
+  }
+
+  .register-card-content {
+    padding: 24px;
+  }
+
+  .register-card-content strong {
+    font-size: 32px;
   }
 }
 
@@ -839,20 +893,12 @@
     width: min(100% - 32px, 1440px);
   }
 
-  .register-hero {
-    margin-bottom: 36px;
+  .register-section + .register-section {
+    margin-top: 64px;
   }
 
-  .register-hero h1 {
-    font-size: clamp(44px, 14vw, 62px);
-  }
-
-  .register-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .register-card {
-    min-height: 510px;
+  .register-section-label {
+    margin-bottom: 28px;
   }
 
   .register-modal-backdrop {

@@ -12,7 +12,7 @@ import GamesPage from '../src/pages/GamesPage'
 export function checkPages() {
   const destinations = {
     '/': 'MIDI', '/about': 'MIDI', '/gallery': 'Gallery', '/games': 'Coming soon',
-    '/register': 'Choose Your Tournament', '/details': 'Event details', '/contact': 'Let&#x27;s talk',
+    '/register': 'Main Tournaments', '/details': 'Event details', '/contact': 'Let&#x27;s talk',
   }
   for (const [path, heading] of Object.entries(destinations)) {
     const router = createMemoryRouter(routes, { initialEntries: [path] })
@@ -23,7 +23,8 @@ export function checkPages() {
     router.dispose()
   }
 
-  for (const game of ['cs2', 'lol', 'valorant', 'val', 'tft']) {
+  const registrationLinks = ['cs2', 'lol', 'valorant', 'val', 'tft', 'tekken', 'fifa', 'hoi4', 'nba2k']
+  for (const game of registrationLinks) {
     const html = renderToString(<MemoryRouter initialEntries={['/register?game='+game]}><RegisterPage /></MemoryRouter>)
     assert.ok(html.includes('register-modal-title'), `${game} deep link renders its dialog`)
     assert.ok(html.includes('Registration is not open yet'), 'Registration has an honest unavailable state')
@@ -35,5 +36,5 @@ export function checkPages() {
     assert.ok(!html.includes('undefined'), 'Lithuanian page has all translations')
     assert.ok(html.includes('<h1'), 'Lithuanian page has a primary heading')
   }
-  console.log('Passed: 7 routes, 5 registration deep links, and 5 Lithuanian page renders.')
+  console.log(`Passed: 7 routes, ${registrationLinks.length} registration deep links, and 5 Lithuanian page renders.`)
 }

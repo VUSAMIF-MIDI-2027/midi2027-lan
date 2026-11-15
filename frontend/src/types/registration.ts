@@ -1,12 +1,11 @@
 export type RegistrationGameId = 'cs2' | 'lol' | 'valorant' | 'tft'
 
 export interface RegistrationTournament {
-  id: RegistrationGameId
+  id: RegistrationGameId | 'tekken' | 'fifa' | 'hoi4' | 'nba2k'
   name: string
   shortName: string
-  description: string
-  image: string
-  imageClass: string
+  image?: string
+  imageClass?: string
   background: string
 }
 
