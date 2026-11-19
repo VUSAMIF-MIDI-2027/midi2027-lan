@@ -1,54 +1,18 @@
 # MIDI 2027 LAN
 
-<<<<<<< Updated upstream
-MIDI 2027 LAN is a bilingual website for the MIDI 2027 LAN Party. It gives players and visitors one place to explore the tournament lineup, check the schedule and venue map, meet the organisers, and find contact and community links. The current version is an informational site in English and Lithuanian. As the event approaches, it will also serve as the registration hub for players and teams.
+MIDI 2027 LAN is the English and Lithuanian website for the MIDI 2027 LAN Party. Players and visitors can browse tournaments, check the venue and schedule, meet the organisers, and find contact and community links.
 
-## Tech stack
-
-- **React and TypeScript** for the frontend
-- **Vite** for local development and production builds
-- **Tailwind CSS v4** for styling and responsive layouts
-- **ASP.NET Core** for the planned backend
+The frontend uses React, TypeScript, Vite, and Tailwind CSS v4. It runs independently with local data. An ASP.NET Core API is planned for tournament data and registration submissions.
 
 ## Run locally
 
-Install Node.js 22.12 or later, then run these commands from the repository root.
-=======
-Website for the MIDI 2027 LAN Party, built with React, TypeScript, Vite, and Tailwind CSS v4. The frontend is based on the Figma Make design and supports English and Lithuanian.
-
-## Current state
-
-| Page | Route | What's available |
-| --- | --- | --- |
-| About | `/`, `/about` | Event introduction, a horizontally scrolling tournament lineup, partner tiles, and community links |
-| Gallery | `/gallery` | Wide, staggered photo tiles with a compact mobile layout. The tiles currently show crops of one placeholder photo. |
-| Games | `/games` | Coming-soon screen |
-| Register | `/register` | Four tournament cards that open registration status notices. The page currently has no registration forms. |
-| Event Details | `/details` | Venue map, two-day tournament schedule, and organiser roles illustrated with cat silhouettes |
-| Contact | `/contact` | Two email cards followed by a separate group of social and Discord links |
-| Privacy and cookies | `/privacy`, `/cookies` | Placeholder pages awaiting policy content |
-
-The About cards and Details schedule still show April 2026 dates from the design. Confirm the 2027 schedule and update both pages before publishing. The gallery also needs its final photo files.
-
-## Run locally
-
-Use Node.js 22.12 or later and npm. Run these commands from the repository root.
->>>>>>> Stashed changes
+Install Node.js 22.12 or later and npm. Run these commands from the repository root.
 
 ```sh
 npm ci
 npm run dev
 ```
 
-<<<<<<< Updated upstream
-Open [http://127.0.0.1:5173](http://127.0.0.1:5173). To create a production build, run `npm run build`.
-
-## Future ASP.NET Core implementation
-
-The frontend currently runs with local tournament data and displays registration status notices. The planned ASP.NET Core API will provide tournament data and accept registration submissions. The frontend already includes TypeScript API contracts, a registration service, and a Vite development proxy for `/api` requests.
-
-Once the backend is available, copy `frontend/.env.example` to `frontend/.env.local`, set `API_PROXY_TARGET` to the local ASP.NET Core URL, and set `VITE_USE_API=true` to load tournament data from the API. Live registration will also require frontend forms and backend storage for submissions.
-=======
 Open [http://127.0.0.1:5173](http://127.0.0.1:5173).
 
 | Command | Purpose |
@@ -57,22 +21,37 @@ Open [http://127.0.0.1:5173](http://127.0.0.1:5173).
 | `npm test` | Run API and registration service tests |
 | `npm run test:pages` | Check page rendering, translations, and registration deep links |
 | `npm run build` | Type-check and build production files into `frontend/dist/` |
-| `npm run preview` | Preview the production build locally |
+| `npm run preview` | Serve the production build locally after running the build |
+
+## Site pages
+
+| Page | Route | Current content |
+| --- | --- | --- |
+| About | `/`, `/about` | Event introduction, tournament lineup, partners, and community links |
+| Gallery | `/gallery` | Nine tiles using different crops of one placeholder photo |
+| Games | `/games` | Coming-soon page |
+| Register | `/register` | Four main and four side tournament cards. Each opens a registration status dialog. |
+| Event Details | `/details` | Venue map, two-day schedule, and organiser team |
+| Contact | `/contact` | Email, social media, and Discord links |
+| Privacy and cookies | `/privacy`, `/cookies` | Placeholder pages for policy content |
+
+The About tournament lineup and Event Details schedule still show April 2026 dates. Before publishing, update both with the confirmed 2027 schedule, add the final gallery photos, and supply the privacy and cookie policies.
 
 ## Project layout
 
-- `frontend/src/pages/` contains the route-level pages. The route table lives in `frontend/src/routes.tsx`.
-- `frontend/src/components/` contains shared layout, About, Details, and registration components.
-- `frontend/src/assets/images/` contains local photos, game artwork, partner logos, and SVG illustrations.
-- `frontend/src/data/` contains local tournament and partner data. The two-day schedule lives in `frontend/src/components/details/VenueAndSchedule.tsx`.
-- `frontend/src/i18n/` contains translations and language context. Some section-specific labels live in the components.
-- `frontend/src/styles/` contains the Tailwind entry point and shared page styles. The site uses Dosis from Google Fonts.
-- `frontend/src/services/` and `frontend/src/types/` contain API clients and request and response contracts.
-- `backend/` is reserved for the ASP.NET application. `docs/` contains integration and hosting notes.
+| Path | Contents |
+| --- | --- |
+| [`frontend/src/pages/`](frontend/src/pages/) | Page components mapped in [`routes.tsx`](frontend/src/routes.tsx) |
+| [`frontend/src/components/`](frontend/src/components/) | Shared layout and page sections, including the [venue and schedule](frontend/src/components/details/VenueAndSchedule.tsx) |
+| [`frontend/src/data/`](frontend/src/data/) | Local tournament, registration card, and partner data |
+| [`frontend/src/i18n/`](frontend/src/i18n/) | English and Lithuanian translations and language context |
+| [`frontend/src/assets/images/`](frontend/src/assets/images/) | Photos, game artwork, partner logos, and illustrations |
+| [`frontend/src/styles/`](frontend/src/styles/) | Tailwind entry point and shared page styles |
+| [`frontend/src/services/`](frontend/src/services/), [`frontend/src/types/`](frontend/src/types/) | API clients and TypeScript contracts |
+| [`backend/`](backend/) | Reserved for the ASP.NET Core application |
 
-## Backend status
+## ASP.NET Core integration
 
-The frontend runs independently with local tournament data by default. To test a future ASP.NET tournament endpoint, copy `frontend/.env.example` to `frontend/.env.local`, set `API_PROXY_TARGET` to the API's local URL, and set `VITE_USE_API=true`. Vite forwards development requests under `/api`.
+Once the API implements `GET /api/tournaments`, copy [`frontend/.env.example`](frontend/.env.example) to `frontend/.env.local`, set `API_PROXY_TARGET` to the ASP.NET Core launch URL, and set `VITE_USE_API=true`. Restart Vite to load the configuration. The development server forwards requests under `/api` to the configured URL.
 
-Registration request types and service code remain in the repo for future integration. Live submissions require both an implemented ASP.NET endpoint and a restored frontend form. The server and database are pending. See [ASP.NET integration notes](docs/aspnet-integration.md) for the API contracts and deployment options.
->>>>>>> Stashed changes
+Live registration still needs frontend forms and an ASP.NET Core endpoint that validates and stores submissions. The repository includes the registration service and API contracts. See the [ASP.NET integration notes](docs/aspnet-integration.md) for endpoint contracts and production hosting.
