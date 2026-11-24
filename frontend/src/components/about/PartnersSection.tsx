@@ -16,6 +16,7 @@ export default function PartnersSection() {
                   src={s.src}
                   alt={s.alt}
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             ))}

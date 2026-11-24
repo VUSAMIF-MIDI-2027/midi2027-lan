@@ -69,7 +69,7 @@ export default function RegisterPage() {
                   >
                     <span className="register-card-art" aria-hidden="true">
                       {tournament.image
-                        ? <img className={`register-card-image ${tournament.imageClass}`} src={tournament.image} alt="" />
+                        ? <img className={`register-card-image ${tournament.imageClass}`} src={tournament.image} alt="" loading={isMain ? 'eager' : 'lazy'} decoding="async" />
                         : <span className="register-card-fallback">{tournament.shortName}</span>}
                       <span className="register-card-shade" />
                       <span className="register-card-index">{String(index + 1 + (isMain ? 0 : tournaments.main.length)).padStart(2, '0')}</span>

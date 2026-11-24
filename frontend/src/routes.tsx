@@ -20,9 +20,6 @@ export const routes: RouteObject[] = [
       { path: 'register', Component: RegisterPage },
       { path: 'details', Component: DetailsPage },
       { path: 'contact', Component: ContactPage },
-      ...['privacy', 'cookies'].map(path => ({
-        path, Component: ComingSoonPage,
-      })),
       { path: '*', Component: ComingSoonPage },
     ],
   },

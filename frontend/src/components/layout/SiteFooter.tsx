@@ -1,11 +1,13 @@
 import type { ReactNode } from 'react'
 import { Link } from 'react-router'
 import { useLang } from '../../i18n/LanguageContext'
-import { wrap } from '../../styles/layout'
-import facebookPreview from '../../assets/images/social-facebook-preview.png'
-import instagramPreview from '../../assets/images/social-instagram-preview.png'
-import tiktokPreview from '../../assets/images/social-tiktok-preview.png'
-import xPreview from '../../assets/images/social-x-preview.png'
+
+const midiLogo = `${import.meta.env.BASE_URL}logos/logo-a.png`
+const organiserLogo = `${import.meta.env.BASE_URL}logos/vusa-mif.webp`
+const facebookPreview = `${import.meta.env.BASE_URL}banners/social-facebook-preview.webp`
+const instagramPreview = `${import.meta.env.BASE_URL}banners/social-instagram-preview.webp`
+const tiktokPreview = `${import.meta.env.BASE_URL}banners/social-tiktok-preview.webp`
+const xPreview = `${import.meta.env.BASE_URL}banners/social-x-preview.webp`
 
 const SOCIALS: {
   label: string
@@ -32,19 +34,19 @@ const SOCIALS: {
   },
 ]
 
-
 export default function SiteFooter() {
   const tr = useLang()
   const year = new Date().getFullYear()
   return (
         <footer className="site-footer">
-          <div className="site-footer-inner" style={wrap}>
-            <span className="site-footer-copyright">&copy; {year} MIDI. {tr.allRights}</span>
+          <div className="site-footer-inner">
+            <Link to="/" className="site-footer-brand">
+              <img src={midiLogo} alt="MIDI" />
+              <span>{tr.eventName}</span>
+            </Link>
 
-            <div className="site-footer-policies" aria-label="Legal information">
-              <Link to="/cookies">{tr.cookiesPolicy}</Link>
-              <Link to="/privacy">{tr.privacyPolicy}</Link>
-            </div>
+            <div className="site-footer-center">
+            <span className="site-footer-copyright">&copy; {year} MIDI. {tr.allRights}</span>
 
             <div className="site-footer-social">
               <span className="site-footer-social-label">{tr.social}</span>
@@ -61,11 +63,17 @@ export default function SiteFooter() {
                         </span>
                         <span className="social-preview-arrow">&#8599;</span>
                       </span>
-                      {s.preview && <img src={s.preview} alt="" />}
+                      {s.preview && <img src={s.preview} alt="" loading="lazy" decoding="async" />}
                     </span>
                   </a>
                 ))}
               </div>
+            </div>
+            </div>
+
+            <div className="site-footer-organiser">
+              <img src={organiserLogo} alt="VU SA MIF" width="56" height="64" loading="lazy" decoding="async" />
+              <span>{tr.organisedBy}<strong>VU SA MIF</strong></span>
             </div>
           </div>
         </footer>

@@ -7,7 +7,7 @@ export default function ComingSoonPage() {
   const key = pathname.slice(1)
   const titles: Record<string, string> = {
     gallery: tr.gallery, games: tr.games, register: tr.register, details: tr.details,
-    contact: tr.contact, privacy: tr.privacyPolicy, cookies: tr.cookiesPolicy,
+    contact: tr.contact,
   }
   return (
     <section className="mx-auto flex min-h-[65vh] max-w-3xl flex-col items-start justify-center gap-6 px-6 py-24">

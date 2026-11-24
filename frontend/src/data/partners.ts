@@ -1,8 +1,8 @@
-import sponsor1 from '../assets/images/sponsor-1.png'
-import sponsor3 from '../assets/images/sponsor-3.png'
-import sponsor4 from '../assets/images/sponsor-4.png'
-import sponsor5 from '../assets/images/sponsor-5.png'
-import sponsorGaidelis from '../assets/images/sponsor-new-gaidelis.png'
+const sponsor1 = `${import.meta.env.BASE_URL}logos/sponsor-1.webp`
+const sponsor3 = `${import.meta.env.BASE_URL}logos/sponsor-3.webp`
+const sponsor4 = `${import.meta.env.BASE_URL}logos/sponsor-4.webp`
+const sponsor5 = `${import.meta.env.BASE_URL}logos/sponsor-5.webp`
+const sponsorGaidelis = `${import.meta.env.BASE_URL}logos/sponsor-new-gaidelis.webp`
 
 export const partners: { src: string; alt: string; colorBg?: boolean }[] = [
     { src: sponsor3, alt: 'Pepsi' },
@@ -11,4 +11,3 @@ export const partners: { src: string; alt: string; colorBg?: boolean }[] = [
     { src: sponsor4, alt: 'TopPC' },
     { src: sponsor5, alt: 'RPC.LT' },
   ]
-

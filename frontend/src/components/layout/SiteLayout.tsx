@@ -14,7 +14,6 @@ export default function SiteLayout() {
       '/': t[lang].about, '/about': t[lang].about, '/gallery': t[lang].gallery,
       '/games': t[lang].games, '/register': t[lang].register,
       '/details': t[lang].details, '/contact': t[lang].contact,
-      '/privacy': t[lang].privacyPolicy, '/cookies': t[lang].cookiesPolicy,
     }
     document.title = `MIDI LAN Party | ${labels[pathname] ?? t[lang].notFound}`
   }, [pathname, lang])

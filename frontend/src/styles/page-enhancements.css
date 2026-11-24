@@ -342,7 +342,17 @@
     "c c a a a a a b b b d d"
     "c c e e e f f b b b d d"
     ". . e e e f f g g h h h"
-    ". . . . . i i g g . . .";
+    ". . . . . i i g g . . ."
+    ". j j j j i i k k k k ."
+    ". j j j j l l k k k k ."
+    ". . . . . l l m m m m ."
+    ". . . . . . . m m m m ."
+    ". n n n n o o o p p p ."
+    ". n n n n o o o p p p ."
+    "q q q q r r r r s s s s"
+    "q q q q r r r r s s s s"
+    ". . t t t t u u u u . ."
+    ". . t t t t u u u u . .";
   gap: 14px;
 }
 
@@ -371,6 +381,18 @@
 .gallery-tile:nth-child(7) { grid-area: g; }
 .gallery-tile:nth-child(8) { grid-area: h; }
 .gallery-tile:nth-child(9) { grid-area: i; }
+.gallery-tile:nth-child(10) { grid-area: j; }
+.gallery-tile:nth-child(11) { grid-area: k; }
+.gallery-tile:nth-child(12) { grid-area: l; }
+.gallery-tile:nth-child(13) { grid-area: m; }
+.gallery-tile:nth-child(14) { grid-area: n; }
+.gallery-tile:nth-child(15) { grid-area: o; }
+.gallery-tile:nth-child(16) { grid-area: p; }
+.gallery-tile:nth-child(17) { grid-area: q; }
+.gallery-tile:nth-child(18) { grid-area: r; }
+.gallery-tile:nth-child(19) { grid-area: s; }
+.gallery-tile:nth-child(20) { grid-area: t; }
+.gallery-tile:nth-child(21) { grid-area: u; }
 
 @media (max-width: 760px) {
   .gallery-grid {
@@ -384,7 +406,20 @@
       "e e d d"
       "e e f f"
       "g g h h"
-      "g g i i";
+      "g g i i"
+      "j j k k"
+      "j j k k"
+      ". l l ."
+      "m m m m"
+      "m m m m"
+      "n n o o"
+      "n n o o"
+      "p p q q"
+      "p p q q"
+      "r r s s"
+      "r r s s"
+      "t t u u"
+      "t t u u";
     gap: 8px;
   }
 }

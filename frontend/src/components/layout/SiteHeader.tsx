@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router'
-import navLogo from '../../assets/images/logo-a.png'
+
 import { t, type Lang } from '../../i18n/translations'
+
+const navLogo = `${import.meta.env.BASE_URL}logos/logo-a.png`
 
 const NAV_KEYS: { key: keyof typeof t.EN; to: string }[] = [
   { key: 'about', to: '/' },
@@ -10,7 +12,6 @@ const NAV_KEYS: { key: keyof typeof t.EN; to: string }[] = [
   { key: 'register', to: '/register' },
   { key: 'details', to: '/details' },
 ]
-
 
 export default function SiteHeader({lang, setLang}: {lang: Lang; setLang: (lang: Lang) => void}) {
   const location = useLocation()
@@ -74,8 +75,9 @@ export default function SiteHeader({lang, setLang}: {lang: Lang; setLang: (lang:
                   color: lang === l ? '#fff' : (isHome ? '#6f8eb8' : '#6a8099'),
                   border: 'none',
                   borderLeft: i > 0 ? '1px solid rgba(255,255,255,0.12)' : 'none',
-                  padding: '6px 10px',
-                  fontSize: 11, fontWeight: 800, letterSpacing: '0.1em',
+                  padding: '10px 16px',
+                  minWidth: 54, minHeight: 44,
+                  fontSize: 14, fontWeight: 800, letterSpacing: '0.1em',
                   cursor: 'pointer',
                   fontFamily: '"Dosis","Arial Narrow",system-ui,sans-serif',
                   transition: 'background 0.15s, color 0.15s',

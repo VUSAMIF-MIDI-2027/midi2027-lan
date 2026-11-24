@@ -1,6 +1,8 @@
 import { useContext } from 'react'
-import venueMap from '../../assets/images/venue-map.svg'
+
 import { LangContext } from '../../i18n/LanguageContext'
+
+const venueMap = `${import.meta.env.BASE_URL}icons/venue-map.svg`
 
 const schedule = [
   {

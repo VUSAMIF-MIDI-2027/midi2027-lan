@@ -1,6 +1,8 @@
 import { useContext } from 'react'
-import cat from '../../assets/images/organiser-cat.svg'
+
 import { LangContext } from '../../i18n/LanguageContext'
+
+const cat = `${import.meta.env.BASE_URL}icons/organiser-cat.svg`
 
 const groups = [
   {

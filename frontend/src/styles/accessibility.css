@@ -10,8 +10,6 @@
 }
 .skip-link:focus { transform: translateY(0); }
 :focus-visible { outline: 2px solid #39bdf8; outline-offset: 4px; }
-.site-footer-policies a { color: inherit; text-decoration: none; }
-.site-footer-policies a:hover { text-decoration: underline; }
 .mobile-menu-button { display: none; }
 @keyframes rise {
   from { opacity: 0; transform: translateY(24px); }

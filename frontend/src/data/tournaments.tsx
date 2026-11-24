@@ -1,10 +1,11 @@
 import type { ReactNode } from 'react'
-import gameLol from '../assets/images/game-val.png'
-import gameCs2 from '../assets/images/game-cs2.png'
-import gameVal from '../assets/images/game-lol.png'
-import gameTft from '../assets/images/game-fifa.png'
-import gameNba from '../assets/images/game-tft.png'
-import gameFifa from '../assets/images/game-nba.png'
+
+const gameLol = `${import.meta.env.BASE_URL}banners/game-val.webp`
+const gameCs2 = `${import.meta.env.BASE_URL}banners/game-cs2.webp`
+const gameVal = `${import.meta.env.BASE_URL}banners/game-lol.webp`
+const gameTft = `${import.meta.env.BASE_URL}banners/game-fifa.webp`
+const gameNba = `${import.meta.env.BASE_URL}banners/game-tft.webp`
+const gameFifa = `${import.meta.env.BASE_URL}banners/game-nba.webp`
 
 export const tournamentFixtures: {
     game: string; class: string; date: string; accent: string; bg: string; abbr: string;
@@ -92,4 +93,3 @@ export const tournamentFixtures: {
       ),
     },
   ]
-

@@ -28,14 +28,13 @@ Open [http://127.0.0.1:5173](http://127.0.0.1:5173).
 | Page | Route | Current content |
 | --- | --- | --- |
 | About | `/`, `/about` | Event introduction, tournament lineup, partners, and community links |
-| Gallery | `/gallery` | Nine tiles using different crops of one placeholder photo |
+| Gallery | `/gallery` | Twenty-one event photos optimized as WebP images, with lazy loading below the first three tiles |
 | Games | `/games` | Coming-soon page |
 | Register | `/register` | Four main and four side tournament cards. Each opens a registration status dialog. |
 | Event Details | `/details` | Venue map, two-day schedule, and organiser team |
 | Contact | `/contact` | Email, social media, and Discord links |
-| Privacy and cookies | `/privacy`, `/cookies` | Placeholder pages for policy content |
 
-The About tournament lineup and Event Details schedule still show April 2026 dates. Before publishing, update both with the confirmed 2027 schedule, add the final gallery photos, and supply the privacy and cookie policies.
+The About tournament lineup and Event Details schedule still show April 2026 dates. Before publishing, update both with the confirmed 2027 schedule.
 
 ## Project layout
 
@@ -45,7 +44,7 @@ The About tournament lineup and Event Details schedule still show April 2026 dat
 | [`frontend/src/components/`](frontend/src/components/) | Shared layout and page sections, including the [venue and schedule](frontend/src/components/details/VenueAndSchedule.tsx) |
 | [`frontend/src/data/`](frontend/src/data/) | Local tournament, registration card, and partner data |
 | [`frontend/src/i18n/`](frontend/src/i18n/) | English and Lithuanian translations and language context |
-| [`frontend/src/assets/images/`](frontend/src/assets/images/) | Photos, game artwork, partner logos, and illustrations |
+| [`frontend/public/`](frontend/public/) | Static images organised into `icons/`, `logos/`, `banners/`, and `gallery/`. The site references these through public URLs. |
 | [`frontend/src/styles/`](frontend/src/styles/) | Tailwind entry point and shared page styles |
 | [`frontend/src/services/`](frontend/src/services/), [`frontend/src/types/`](frontend/src/types/) | API clients and TypeScript contracts |
 | [`backend/`](backend/) | Reserved for the ASP.NET Core application |

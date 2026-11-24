@@ -688,25 +688,62 @@ option {
 }
 
 .site-footer-inner {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  width: calc(100% - 48px);
+  margin-inline: auto;
   min-height: 118px;
   align-items: center;
-  gap: clamp(28px, 4vw, 64px);
+  gap: 24px;
   color: #f4f6fb;
   font-size: 13px;
   font-weight: 700;
 }
 
 .site-footer-copyright {
-  margin-right: auto;
   white-space: nowrap;
 }
 
-.site-footer-policies {
+.site-footer-brand,
+.site-footer-organiser,
+.site-footer-center {
   display: flex;
   align-items: center;
-  gap: clamp(24px, 3vw, 42px);
-  color: #60aaff;
+  gap: 16px;
+}
+
+.site-footer-brand {
+  color: inherit;
+  text-decoration: none;
+  justify-self: start;
+}
+
+.site-footer-brand img {
+  width: auto;
+  height: 44px;
+  mix-blend-mode: screen;
+}
+
+.site-footer-center {
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px 56px;
+}
+
+.site-footer-organiser {
+  justify-self: end;
+}
+
+.site-footer-organiser img {
+  width: 56px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.site-footer-organiser span {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
   white-space: nowrap;
 }
 
@@ -828,24 +865,23 @@ option {
   width: 230px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .site-footer-inner {
-    flex-wrap: wrap;
-    justify-content: center;
+    grid-template-columns: 1fr;
+    justify-items: center;
     gap: 20px 32px;
     padding-block: 30px;
     text-align: center;
   }
 
-  .site-footer-copyright {
-    width: 100%;
-    margin-right: 0;
+  .site-footer-brand,
+  .site-footer-organiser {
+    justify-self: center;
   }
 }
 
 @media (max-width: 560px) {
-  .site-footer-inner,
-  .site-footer-policies,
+  .site-footer-center,
   .site-footer-social {
     flex-direction: column;
   }
@@ -854,7 +890,6 @@ option {
     gap: 24px;
   }
 
-  .site-footer-policies,
   .site-footer-social {
     gap: 14px;
   }
@@ -990,7 +1025,6 @@ option {
   background: #050506;
 }
 
-.app-shell--home .site-footer-policies,
 .app-shell--home .site-footer-icons a:hover,
 .app-shell--home .site-footer-icons a:focus-visible,
 .app-shell--home .social-preview-arrow {

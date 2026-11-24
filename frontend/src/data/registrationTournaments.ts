@@ -1,11 +1,12 @@
-import gameCs2 from '../assets/images/game-cs2.png'
-import gameLol from '../assets/images/game-val.png'
-import gameTft from '../assets/images/game-fifa.png'
-import gameValorant from '../assets/images/game-lol.png'
-import gameFifa from '../assets/images/game-nba.png'
-import gameNba from '../assets/images/game-tft.png'
 import type { RegistrationTournament } from '../types/registration'
 import type { Translation } from '../i18n/translations'
+
+const gameCs2 = `${import.meta.env.BASE_URL}banners/game-cs2.webp`
+const gameLol = `${import.meta.env.BASE_URL}banners/game-val.webp`
+const gameTft = `${import.meta.env.BASE_URL}banners/game-fifa.webp`
+const gameValorant = `${import.meta.env.BASE_URL}banners/game-lol.webp`
+const gameFifa = `${import.meta.env.BASE_URL}banners/game-nba.webp`
+const gameNba = `${import.meta.env.BASE_URL}banners/game-tft.webp`
 
 type TournamentCard = RegistrationTournament & { descriptionKey: keyof Translation }
 

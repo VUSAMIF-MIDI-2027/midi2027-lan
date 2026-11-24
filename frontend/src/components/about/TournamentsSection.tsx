@@ -39,6 +39,8 @@ export default function TournamentsSection() {
                       <img
                         className="tournament-image tournament-image--cover"
                         src={t.logo}
+                        loading="lazy"
+                        decoding="async"
                         alt=""
                         style={{ objectPosition: t.imagePosition ?? 'center' }}
                       />
@@ -48,6 +50,8 @@ export default function TournamentsSection() {
                         <img
                           className="tournament-image tournament-image--contained"
                           src={t.logo}
+                          loading="lazy"
+                          decoding="async"
                           alt=""
                           style={{ mixBlendMode: t.logoBlend ?? 'normal' }}
                         />
